@@ -1,105 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gildong Hong</title>
-  <meta name="description" content="Personal website of Gildong Hong.">
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-  <main class="container">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sanghyeok Moon</title>
+    <meta name="author" content="Sanghyeok Moon" />
+    <meta name="description" content="Sanghyeok Moon's personal website." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤗</text></svg>" />
 
-    <!-- ===== Header / profile ===== -->
-    <header class="profile">
-      <img class="avatar" src="assets/images/profile.svg" alt="Gildong Hong">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" />
+
+    <style>
+      body {
+        max-width: 780px;
+        padding: 25px 10px 40px;
+        margin: 0 auto;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: 375;
+        font-size: 15px;
+        background-color: #fdfdfd;
+        color: #1a1a1a;
+        line-height: 1.4;
+      }
+
+      strong { font-weight: 500; }
+
+      h1 { margin: 0; line-height: 1; font-weight: 500; }
+
+      h2 {
+        border-bottom: 1px solid #ddd;
+        margin: 1.4em 0 0.2em;
+        padding-bottom: 4px;
+        font-weight: 500;
+      }
+
+      a { color: #1772d0; text-decoration: none; }
+      a:hover { color: #f09228; }
+
+      /* Header */
+      .header { display: flex; align-items: center; justify-content: center; gap: 30px; }
+      .header .photo { flex: 0 0 150px; max-width: 150px; }
+      .header .photo img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center; border-radius: 50%; display: block; }
+      .header .intro { text-align: center; }
+      .header .intro .icons { margin-top: 10px; font-size: 0; }
+      .header .intro .icons a { font-size: 22px; margin: 0 7px; }
+      .header .intro .contact { margin-top: 10px; font-size: 0.95em; }
+
+      /* About */
+      .about p { text-align: justify; margin: 8px 0; }
+
+      /* Honors / Services / Education / Projects entries */
+      .entries p { margin: 8px 0; }
+      .entries .sub { color: #777; font-size: 0.9em; }
+
+      /* Experience */
+      .exp-item { display: flex; align-items: flex-start; gap: 24px; margin: 22px 0; }
+      .exp-item .logo {
+        flex: 0 0 90px; width: 90px; height: 44px; margin-top: 2px;
+        display: flex; align-items: center; justify-content: center;
+      }
+      .exp-item .logo img { max-width: 90px; max-height: 44px; object-fit: contain; }
+      .exp-item .logo.emblem { flex: 0 0 90px; width: 90px; }
+      .exp-item .logo.emblem img { max-width: 87px; max-height: 60px; }
+
+      /* Collapsible research experience */
+      .experience .role {
+        cursor: pointer; display: inline-block;
+        border: 1px solid transparent; border-radius: 8px;
+        padding: 4px 10px; margin-left: -10px;
+        transition: color 0.15s, border-color 0.15s;
+      }
+      .experience .role:hover { color: #1772d0; }
+      .experience .exp-item.open .role {
+        border-color: #1772d0; color: #1772d0;
+        box-shadow: 0 0 0 2px rgba(23, 114, 208, 0.12) inset;
+      }
+      .experience .desc { display: none; margin-top: 6px; }
+      .experience .exp-item.open .desc { display: block; }
+      .experience .desc ul { margin: 0; padding-left: 20px; }
+      .experience .desc li { margin: 3px 0; }
+      .exp-item .logo i { font-size: 34px; color: #111; }
+      .exp-item .role { font-weight: 500; }
+      .exp-item .meta { color: #777; font-size: 0.9em; margin-top: 2px; }
+      .exp-item .desc { margin-top: 5px; }
+
+      /* Publications */
+      .pub-toggle { display: flex; gap: 8px; margin: 12px 0 6px; }
+      .pub-btn {
+        border: 1px solid #ddd; background: #fff; padding: 6px 12px;
+        border-radius: 8px; cursor: pointer; font-family: inherit;
+        font-weight: 450; font-size: 0.9em; color: #333;
+      }
+      .pub-btn.active {
+        border-color: #1772d0; color: #1772d0;
+        box-shadow: 0 0 0 2px rgba(23, 114, 208, 0.12) inset;
+      }
+      .pub-item { margin: 12px 0; }
+      .pub-item .title { font-weight: 500; }
+      .venue { font-weight: 500; }
+      .highlight { color: #f09228; font-weight: 500; }
+
+      /* Skills */
+      .skills p { margin: 5px 0; }
+
+      @media (max-width: 600px) {
+        .header { flex-direction: column; gap: 14px; }
+        .header .photo { flex-basis: 60%; max-width: 60%; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="photo">
+        <img src="assets/img/profile.jpg" alt="Sanghyeok Moon" />
+      </div>
       <div class="intro">
-        <h1>Gildong Hong</h1>
-        <p class="affiliation">
-          M.S. Student, Dept. of Computer Engineering<br>
-          Kyung Hee University
-        </p>
-        <p class="contact">
-          <a href="mailto:gildong@example.com">Email</a> &middot;
-          <a href="assets/cv.pdf">CV</a> &middot;
-          <a href="https://scholar.google.com/">Scholar</a> &middot;
-          <a href="https://github.com/delta9043">GitHub</a> &middot;
-          <a href="https://x.com/">Twitter</a>
-        </p>
+        <h1>Sanghyeok Moon</h1>
+        <p style="margin: 6px 0 0">문상혁 &middot; Undergraduate Researcher, Kyung Hee University</p>
+        <div class="icons">
+          <a href="#" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+          <a href="https://github.com/delta9043" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:delta9043@khu.ac.kr" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="assets/pdf/cv.pdf" title="CV"><i class="ai ai-cv"></i></a>
+        </div>
+        <div class="contact">delta9043 [at] khu.ac.kr</div>
       </div>
-    </header>
+    </div>
 
-    <!-- ===== Bio ===== -->
-    <section>
+    <h2>About</h2>
+    <div class="about">
       <p>
-        I am a M.S. student at Kyung Hee University, advised by
-        Prof. <a href="#">Advisor Name</a>. My research focuses on
-        efficient deep learning &mdash; model compression, quantization,
-        and on-device inference for large language models.
+        Hi! I am Sanghyeok Moon (문상혁), an undergraduate researcher at
+        <a href="https://www.khu.ac.kr/">Kyung Hee University</a>, majoring in
+        Applied Mathematics with a double major in Computer Engineering.
+        I am currently at the Efficient Multimodal Intelligence Lab, advised by
+        Professor Sungha Choi. Here is my <a href="assets/pdf/cv.pdf">CV</a>.
       </p>
       <p>
-        Previously, I received my B.S. in Computer Engineering from
-        Kyung Hee University. I am broadly interested in making large
-        models practical and accessible.
+        My research interests span efficient AI systems, AI agents, language
+        models, and retrieval-augmented generation. I am particularly interested
+        in memory systems for LLM agents and making large models practical to
+        deploy. I also have a background in mathematical modeling, from
+        agent-based models to time-series prediction.
       </p>
-    </section>
+    </div>
 
-    <!-- ===== News ===== -->
-    <section>
-      <h2>News</h2>
-      <ul class="news">
-        <li><span class="date">2026.06</span> Our paper on efficient LLM inference is accepted at <b>NeurIPS 2026</b>.</li>
-        <li><span class="date">2026.03</span> Started my M.S. at Kyung Hee University.</li>
-        <li><span class="date">2026.02</span> Received B.S. in Computer Engineering.</li>
-      </ul>
-    </section>
-
-    <!-- ===== Publications ===== -->
-    <section>
-      <h2>Publications</h2>
-      <p class="note"><sup>*</sup> denotes equal contribution.</p>
-
-      <div class="pub">
-        <div class="pub-thumb"><img src="assets/images/pub1.svg" alt="Paper teaser"></div>
-        <div class="pub-body">
-          <p class="pub-title">Efficient Quantization for On-Device Large Language Models</p>
-          <p class="pub-authors"><b>Gildong Hong</b>, Second Author, Third Author</p>
-          <p class="pub-venue">NeurIPS 2026</p>
-          <p class="pub-links">
-            <a href="#">paper</a> /
-            <a href="#">code</a> /
-            <a href="#">bibtex</a>
-          </p>
+    <h2>Education</h2>
+    <div class="education">
+      <div class="exp-item">
+        <div class="logo emblem"><img src="assets/img/khu-emblem.png" alt="Kyung Hee University" /></div>
+        <div>
+          <div class="role">B.S. in Applied Mathematics, Kyung Hee University</div>
+          <div class="meta">Mar. 2021 &ndash; Feb. 2027 (expected) &middot; Yongin, Korea</div>
+          <div class="desc">
+            Double major in Computer Engineering. GPA: 4.12 / 4.3 (4.35 / 4.5).
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="pub">
-        <div class="pub-thumb"><img src="assets/images/pub2.svg" alt="Paper teaser"></div>
-        <div class="pub-body">
-          <p class="pub-title">A Study on Model Compression for Transformers</p>
-          <p class="pub-authors">First Author<sup>*</sup>, <b>Gildong Hong</b><sup>*</sup>, Third Author</p>
-          <p class="pub-venue">ICML 2025 Workshop</p>
-          <p class="pub-links">
-            <a href="#">paper</a> /
-            <a href="#">code</a>
-          </p>
+    <h2>Research Experience</h2>
+    <div class="experience">
+      <div class="exp-item">
+        <div class="logo"><img src="assets/img/EMIL.png" alt="Efficient Multimodal Intelligence Lab" /></div>
+        <div>
+          <div class="role">Efficient Multimodal Intelligence Lab</div>
+          <div class="meta">Undergraduate Researcher &mdash; Advisor: Prof. Sungha Choi</div>
+          <div class="meta">Mar. 2026 &ndash; Present &middot; Kyung Hee University, Yongin</div>
+          <div class="desc">
+            <ul>
+              <li>Conducted research on memory-agnostic input processing for LLM agent memory systems, focusing on filtering and topic-based chunking across memory backends.</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </section>
+      <div class="exp-item">
+        <div class="logo"></div>
+        <div>
+          <div class="role">Nonlinear Dynamics Lab</div>
+          <div class="meta">Undergraduate Researcher &mdash; Advisor: Prof. Junpyo Park</div>
+          <div class="meta">Nov. 2025 &ndash; Jun. 2026 &middot; Kyung Hee University, Yongin</div>
+          <div class="desc">
+            <ul>
+              <li>Studied Echo State Networks (reservoir computing) for time-series prediction.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="logo"></div>
+        <div>
+          <div class="role">BioMath Lab</div>
+          <div class="meta">Undergraduate Researcher &mdash; Advisor: Prof. Sunmi Lee</div>
+          <div class="meta">Jul. 2024 &ndash; Aug. 2025 &middot; Kyung Hee University, Yongin</div>
+          <div class="desc">
+            <ul>
+              <li>Developed agent-based models for innovation diffusion and vaccine hesitancy under social and political interactions.</li>
+              <li>Constructed large-scale COVID-19 infection networks from 670K+ contact-tracing records and contributed to a network-based R<sub>t</sub> estimation method.</li>
+              <li>Built SEIR&ndash;ABM simulations on multiple network topologies to analyze how outgroup aversion affected vaccine hesitancy.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <!-- ===== Education / Experience ===== -->
-    <section>
-      <h2>Education</h2>
-      <ul class="timeline">
-        <li><span class="date">2026 &ndash; present</span> M.S. in Computer Engineering, Kyung Hee University</li>
-        <li><span class="date">2022 &ndash; 2026</span> B.S. in Computer Engineering, Kyung Hee University</li>
-      </ul>
-    </section>
+    <h2>Publications</h2>
+    <div class="pub-toggle" role="tablist" aria-label="Publications filter">
+      <button id="btn-selected" class="pub-btn active" role="tab" aria-selected="true">Selected</button>
+      <button id="btn-all" class="pub-btn" role="tab" aria-selected="false">All</button>
+    </div>
+    <p style="font-size: 0.85em; color: #888; margin: 4px 0">* denotes equal contribution</p>
 
-    <footer>
-      <p>Last updated: July 2026 &middot; Built with plain HTML.</p>
-    </footer>
+    <div id="pub-list">
+      <div class="pub-item selected">
+        <div class="title">Innovation Diffusion under Political Identity Polarization: A Contextualized Agent-Based Approach</div>
+        Gira Lee, KangHyun Yoon, Sang Hun Lim, <u>Sanghyeok Moon</u>, Sunmi Lee<br />
+        <span class="venue">SAGE Open</span> (SSCI, Q1), 2026 &middot; Co-author
+      </div>
 
-  </main>
-</body>
+      <div class="pub-item selected">
+        <div class="title">A Novel Approach to Estimating R<sub>t</sub> through Infection Networks: Understanding Regional Transmission Dynamics of COVID-19</div>
+        Byul Nim Kim, Junwoo Jo, Chunyoung Oh, <u>Sanghyeok Moon</u>, Arsen Abdulali, Sunmi Lee<br />
+        <span class="venue">Frontiers in Public Health</span> (SCIE, Q1), 2025 &middot; Co-author
+      </div>
+    </div>
+
+    <h2>Research Presentations</h2>
+    <div class="entries">
+      <p>
+        <strong>Impacts of Outgroup Aversion and Vaccine Hesitancy on Pandemic Spread</strong><br />
+        <span class="sub">Poster Presentation, JSMB-ASMB, Kyoto, Japan (2025)</span>
+      </p>
+      <p>
+        <strong>Time-varying Empirical Reproduction Number</strong><br />
+        <span class="sub">Poster Presentation, KSIAM, Busan, Korea (2024)</span>
+      </p>
+    </div>
+
+    <h2>Projects</h2>
+    <div class="entries">
+      <p>
+        <strong>Reasoning Diversity for Self-Distillation</strong> <span class="sub">(2026)</span><br />
+        Evaluated self-distillation objectives for improving reasoning diversity and
+        mitigating strategy collapse in reinforcement learning for LLMs.
+      </p>
+      <p>
+        <strong>RAG-based Legal QA Chatbot</strong> <span class="sub">(2025)</span><br />
+        Developed a legal QA chatbot using LangChain, Chroma, and GPT-4o mini, with
+        retrieval-augmented responses grounded in case-law evidence.
+      </p>
+      <p>
+        <strong>ABM-based Simulation of Fertility under Wealth Inequality</strong> <span class="sub">(2025)</span><br />
+        Built an agent-based simulation to analyze how wealth inequality and assortative
+        mating affected marriage and fertility dynamics.
+      </p>
+      <p>
+        <strong>Price Volatility Forecasting in Daejeon</strong> <span class="sub">(2025)</span><br />
+        Built a forecasting pipeline from 10-year regional price data and applied
+        ARIMA/SARIMA models for price volatility prediction.
+      </p>
+    </div>
+
+    <h2>Honors &amp; Awards</h2>
+    <div class="entries">
+    </div>
+
+    <h2>Skills</h2>
+    <div class="skills">
+      <p><strong>Programming</strong>: Python, SQL</p>
+      <p><strong>LLM</strong>: PyTorch, Transformers, LangChain, Chroma, vLLM</p>
+      <p><strong>Modeling</strong>: Agent-Based Modeling, SEIR Models, ARIMA/SARIMA, Echo State Networks</p>
+      <p><strong>Tools</strong>: NumPy, pandas, scikit-learn, Git, LaTeX</p>
+    </div>
+
+    <script>
+      (function () {
+        const btnSelected = document.getElementById('btn-selected');
+        const btnAll = document.getElementById('btn-all');
+        const items = Array.from(document.querySelectorAll('.pub-item'));
+
+        function setView(view) {
+          const sel = view === 'selected';
+          items.forEach((el) => {
+            el.style.display = !sel || el.classList.contains('selected') ? '' : 'none';
+          });
+          btnSelected.classList.toggle('active', sel);
+          btnSelected.setAttribute('aria-selected', sel);
+          btnAll.classList.toggle('active', !sel);
+          btnAll.setAttribute('aria-selected', !sel);
+          try {
+            const url = new URL(window.location);
+            url.searchParams.set('view', view);
+            history.replaceState({}, '', url);
+          } catch (e) {
+            /* file:// may block history API; ignore */
+          }
+        }
+
+        btnSelected.addEventListener('click', () => setView('selected'));
+        btnAll.addEventListener('click', () => setView('all'));
+
+        const params = new URLSearchParams(window.location.search);
+        setView(params.get('view') === 'all' ? 'all' : 'selected');
+      })();
+
+      /* Toggle research-experience descriptions on lab-name click */
+      document.querySelectorAll('.experience .exp-item').forEach((item) => {
+        const role = item.querySelector('.role');
+        if (role) role.addEventListener('click', () => item.classList.toggle('open'));
+      });
+    </script>
+  </body>
 </html>
