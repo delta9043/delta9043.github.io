@@ -53,7 +53,7 @@
 
       /* Honors / Services / Education / Projects entries */
       .entries p { margin: 8px 0; }
-      .entries .sub { color: #777; font-size: 0.9em; }
+      .sub { color: #777; font-size: 0.9em; }
 
       /* Experience */
       .exp-item { display: flex; align-items: flex-start; gap: 24px; margin: 22px 0; }
@@ -121,9 +121,9 @@
         <h1>Sanghyeok Moon</h1>
         <p style="margin: 6px 0 0">Undergraduate Researcher, Kyung Hee University</p>
         <div class="icons">
-          <a href="#" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+          <a href="https://scholar.google.com/citations?user=qwextf0AAAAJ&amp;hl=ko" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
           <a href="https://github.com/delta9043" title="GitHub"><i class="fab fa-github"></i></a>
-          <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/sanghyeok-moon-7aba283a3/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
           <a href="mailto:delta9043@khu.ac.kr" title="Email"><i class="fas fa-envelope"></i></a>
           <a href="assets/pdf/CV_Moon%20Sanghyeok.pdf" title="CV"><i class="ai ai-cv"></i></a>
         </div>
@@ -134,18 +134,26 @@
     <h2>About</h2>
     <div class="about">
       <p>
-        Hi! I am Sanghyeok Moon (문상혁), an undergraduate researcher at
+        Hi! I am Sanghyeok Moon (문상혁), an undergraduate student at
         <a href="https://www.khu.ac.kr/">Kyung Hee University</a>, majoring in
         Applied Mathematics with a double major in Computer Engineering.
-        I am currently at the Efficient Multimodal Intelligence Lab, advised by
-        Professor Sungha Choi. Here is my <a href="assets/pdf/CV_Moon%20Sanghyeok.pdf">CV</a>.
+        I am currently an undergraduate researcher at the
+        <a href="https://flexml.kaist.ac.kr/">FlexML Lab</a> in the
+        <a href="https://ee.kaist.ac.kr/en/">KAIST Electrical Engineering</a>,
+        advised by Professor <a href="https://insuhan.github.io/">Insu Han</a>.
+        Here is my <a href="assets/pdf/CV_Moon%20Sanghyeok.pdf">CV</a>.
       </p>
       <p>
-        My research interests span efficient AI systems, AI agents, language
-        models, and retrieval-augmented generation. I am particularly interested
-        in memory systems for LLM agents and making large models practical to
-        deploy. I also have a background in mathematical modeling, from
-        agent-based models to time-series prediction.
+        My research interests span efficient AI systems, AI agents, and language
+        models. In particular, I am interested in
+        <strong>Efficient AI for Agentic Systems</strong>. My recent research has
+        focused on Efficient preprocessing for AI agent memory, including
+        attention-based approaches to constructing semantically coherent chunk
+        for efficient memory units.
+      </p>
+      <p>
+        I also have a background in mathematical modeling, ranging from
+        agent-based modeling to time-series prediction.
       </p>
     </div>
 
@@ -165,17 +173,32 @@
     </div>
 
     <h2>Research Experience</h2>
+    <p style="font-size: 0.85em; color: #888; margin: 4px 0">For more details, Click the lab name</p>
     <div class="experience">
+      <div class="exp-item">
+        <div class="logo emblem"><img src="assets/img/flexml_logo.png" alt="FlexML Lab" /></div>
+        <div>
+          <div class="role">FlexML Lab</div>
+          <div class="meta">Undergraduate Researcher</div>
+          <div class="meta">Advisor: <a href="https://insuhan.github.io/">Prof. Insu Han</a></div>
+          <div class="meta">Sep. 2026 &ndash; Present &middot; KAIST, Daejeon</div>
+          <div class="desc">
+            <ul>
+              <li>TBU</li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <div class="exp-item">
         <div class="logo"><img src="assets/img/EMIL.png" alt="Efficient Multimodal Intelligence Lab" /></div>
         <div>
           <div class="role">Efficient Multimodal Intelligence Lab</div>
           <div class="meta">Undergraduate Researcher</div>
           <div class="meta">Advisor: <a href="https://www.sunghachoi.com/">Prof. Sungha Choi</a></div>
-          <div class="meta">Mar. 2026 &ndash; Present &middot; Kyung Hee University, Yongin</div>
+          <div class="meta">Mar. 2026 &ndash; Aug. 2026 &middot; Kyung Hee University, Yongin</div>
           <div class="desc">
             <ul>
-              <li>Conducted research on memory-agnostic input processing for LLM agent memory systems, focusing on filtering and topic-based chunking across memory backends.</li>
+              <li>Memory-Agnostic Input Processing for LLM Agent Memory Systems</li>
             </ul>
           </div>
         </div>
@@ -189,7 +212,7 @@
           <div class="meta">Nov. 2025 &ndash; Jun. 2026 &middot; Kyung Hee University, Yongin</div>
           <div class="desc">
             <ul>
-              <li>Studied Echo State Networks (reservoir computing) for time-series prediction.</li>
+              <li>Echo State Networks (Reservoir Computing) for Time-Series Prediction</li>
             </ul>
           </div>
         </div>
@@ -203,9 +226,9 @@
           <div class="meta">Jul. 2024 &ndash; Aug. 2025 &middot; Kyung Hee University, Yongin</div>
           <div class="desc">
             <ul>
-              <li>Developed agent-based models for innovation diffusion and vaccine hesitancy under social and political interactions.</li>
-              <li>Constructed large-scale COVID-19 infection networks from 670K+ contact-tracing records and contributed to a network-based R<sub>t</sub> estimation method.</li>
-              <li>Built SEIR&ndash;ABM simulations on multiple network topologies to analyze how outgroup aversion affected vaccine hesitancy.</li>
+              <li>Agent-Based Modeling of Innovation Diffusion under Social and Political Interactions</li>
+              <li>Construction of Large-Scale COVID-19 Contact-Tracing Networks for Network-Based Reproduction Number (R<sub>t</sub>) Estimation</li>
+              <li>SEIR-ABM Simulations on Multiple Network Topologies to Study the Effects of Outgroup Aversion on Vaccine Hesitancy</li>
             </ul>
           </div>
         </div>
@@ -214,23 +237,23 @@
 
     <h2>Publications</h2>
     <div class="pub-toggle" role="tablist" aria-label="Publications filter">
-      <button id="btn-selected" class="pub-btn active" role="tab" aria-selected="true">Selected</button>
-      <button id="btn-all" class="pub-btn" role="tab" aria-selected="false">All</button>
+      <button id="btn-selected" class="pub-btn" role="tab" aria-selected="false">Selected</button>
+      <button id="btn-all" class="pub-btn active" role="tab" aria-selected="true">All</button>
     </div>
     <p style="font-size: 0.85em; color: #888; margin: 4px 0">* denotes equal contribution</p>
 
     <div id="pub-list">
       <div class="pub-item selected">
         <div class="title">Innovation Diffusion under Political Identity Polarization: A Contextualized Agent-Based Approach</div>
-        Gira Lee, KangHyun Yoon, Sang Hun Lim, <u>Sanghyeok Moon</u>, Sunmi Lee<br />
-        <span class="venue">SAGE Open</span> (2026)<br />
+        Gira Lee*, KangHyun Yoon*, Sang Hun Lim*, <u>Sanghyeok Moon</u>, Sunmi Lee<br />
+        <span class="venue">SAGE Open</span> (2026 <span class="sub">&ndash; SSCI Q1</span>)<br />
         <a href="#">paper</a>
       </div>
 
-      <div class="pub-item selected">
+      <div class="pub-item">
         <div class="title">A Novel Approach to Estimating R<sub>t</sub> through Infection Networks: Understanding Regional Transmission Dynamics of COVID-19</div>
-        Byul Nim Kim, Junwoo Jo, Chunyoung Oh, <u>Sanghyeok Moon</u>, Arsen Abdulali, Sunmi Lee<br />
-        <span class="venue">Frontiers in Public Health</span> (2025)<br />
+        Byul Nim Kim*, Junwoo Jo*, Chunyoung Oh, <u>Sanghyeok Moon</u>, Arsen Abdulali, Sunmi Lee<br />
+        <span class="venue">Frontiers in Public Health</span> (2025 <span class="sub">&ndash; SSCI Q1</span>)<br />
         <a href="https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1586786/full">paper</a>
       </div>
     </div>
@@ -247,8 +270,27 @@
       </p>
     </div>
 
+    <h2>Awards</h2>
+    <div class="entries">
+      <p>
+        <strong>1st Place</strong>, KHU Nexus Innovation Challenge<br />
+        <span class="sub">NXT Cloud &amp; AWS (2026)</span>
+      </p>
+      <p>
+        <strong>Popularity Award</strong>, KHUDA Datathon (KHU&rsquo;DATA)<br />
+        <span class="sub">Kyung Hee University (2024)</span>
+      </p>
+    </div>
+
     <h2>Projects</h2>
     <div class="entries">
+      <p>
+        <strong>Anyting Note</strong> <span class="sub">(2026)</span><br />
+        Built a note-taking service that unifies lecture speech, timestamps, PDF pages,
+        and importance scores into Memory Units, enabling natural-language search and
+        instant navigation to the exact lecture context.<br />
+        <a href="https://github.com/nxtcloud-edu/2026-khuniv-NIC-team08">code</a>
+      </p>
       <p>
         <strong>Reasoning Diversity for Self-Distillation</strong> <span class="sub">(2026)</span><br />
         Evaluated self-distillation objectives for improving reasoning diversity and
@@ -257,22 +299,21 @@
       <p>
         <strong>RAG-based Legal QA Chatbot</strong> <span class="sub">(2025)</span><br />
         Developed a legal QA chatbot using LangChain, Chroma, and GPT-4o mini, with
-        retrieval-augmented responses grounded in case-law evidence.
+        retrieval-augmented responses grounded in case-law evidence.<br />
+        <a href="https://github.com/wood-judge/wood-judge-apps">code</a>
       </p>
       <p>
         <strong>ABM-based Simulation of Fertility under Wealth Inequality</strong> <span class="sub">(2025)</span><br />
         Built an agent-based simulation to analyze how wealth inequality and assortative
-        mating affected marriage and fertility dynamics.
+        mating affected marriage and fertility dynamics.<br />
+        <a href="https://github.com/khuda-data/khudata-team10-lowbirth">code</a>
       </p>
       <p>
         <strong>Price Volatility Forecasting in Daejeon</strong> <span class="sub">(2025)</span><br />
         Built a forecasting pipeline from 10-year regional price data and applied
-        ARIMA/SARIMA models for price volatility prediction.
+        ARIMA/SARIMA models for price volatility prediction.<br />
+        <a href="https://github.com/khuda-data/7th-ML-team2">code</a>
       </p>
-    </div>
-
-    <h2>Honors &amp; Awards</h2>
-    <div class="entries">
     </div>
 
     <h2>Skills</h2>
@@ -311,7 +352,7 @@
         btnAll.addEventListener('click', () => setView('all'));
 
         const params = new URLSearchParams(window.location.search);
-        setView(params.get('view') === 'all' ? 'all' : 'selected');
+        setView(params.get('view') === 'selected' ? 'selected' : 'all');
       })();
 
       /* Toggle research-experience descriptions on lab-name click */
